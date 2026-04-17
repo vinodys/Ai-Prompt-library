@@ -11,5 +11,5 @@ RUN apt-get update && apt-get install -y netcat-openbsd
 
 COPY . .
 
-# 🔥 wait for db → then migrate → then run
-CMD ["sh", "-c", "until nc -z db 5432; do echo 'Waiting for DB...'; sleep 2; done; python manage.py migrate && python manage.py runserver 0.0.0.0:8000"]
+# 🔥 wait for postgres → then migrate → then run
+CMD ["sh", "-c", "until nc -z postgres 5432; do echo 'Waiting for DB...'; sleep 2; done; python manage.py migrate && python manage.py runserver 0.0.0.0:8000"]
