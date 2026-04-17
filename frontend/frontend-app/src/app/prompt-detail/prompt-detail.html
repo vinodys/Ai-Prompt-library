@@ -1,0 +1,19 @@
+<div *ngIf="prompt">
+
+  <h2>{{ prompt.title }}</h2>
+
+  <p><strong>Content:</strong></p>
+  <p>{{ prompt.content }}</p>
+
+  <p><strong>Complexity:</strong> {{ prompt.complexity }}</p>
+
+  <p><strong>Created:</strong> {{ prompt.created_at | date: 'medium' }}</p>
+
+  <br>
+
+<button (click)="goBack()">⬅ Back</button>
+</div>
+
+<div *ngIf="!prompt">
+  <p>Loading...</p>
+</div>

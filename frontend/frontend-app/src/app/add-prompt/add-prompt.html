@@ -1,0 +1,38 @@
+<h2>Add New Prompt</h2>
+
+<form [formGroup]="form" (ngSubmit)="submit()">
+
+  <div>
+    <label>Title</label><br>
+    <input formControlName="title">
+    <div *ngIf="form.get('title')?.invalid && form.get('title')?.touched">
+      Title must be at least 3 characters
+    </div>
+  </div>
+
+  <br>
+
+  <div>
+    <label>Content</label><br>
+    <textarea formControlName="content"></textarea>
+    <div *ngIf="form.get('content')?.invalid && form.get('content')?.touched">
+      Content must be at least 20 characters
+    </div>
+  </div>
+
+  <br>
+
+  <div>
+    <label>Complexity (1–10)</label><br>
+    <input type="number" formControlName="complexity">
+  </div>
+
+  <br>
+
+  <button type="submit">Create Prompt</button>
+
+</form>
+
+<br>
+
+<a routerLink="/">⬅ Back</a>

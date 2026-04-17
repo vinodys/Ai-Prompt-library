@@ -1,0 +1,27 @@
+# 🔐 Python / Django
+venv/
+.env
+__pycache__/
+*.pyc
+db.sqlite3
+
+venv/
+backend/venv/
+
+# 🔥 Node / Angular
+node_modules/
+dist/
+.angular/
+*.log
+
+# 🐳 Docker
+*.env
+docker-compose.override.yml
+
+# 🖥 OS junk
+.DS_Store
+Thumbs.db
+
+# 🧠 IDE
+.vscode/
+.idea/

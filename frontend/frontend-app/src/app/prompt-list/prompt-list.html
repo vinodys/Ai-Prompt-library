@@ -1,0 +1,17 @@
+<h2>AI Prompt Library</h2>
+
+<div *ngIf="prompts$ | async as prompts">
+
+  <p>Total: {{ prompts.length }}</p>
+
+  <div *ngFor="let p of prompts">
+    <h3>{{ p.title }}</h3>
+    <p>Complexity: {{ p.complexity }}</p>
+    <a [routerLink]="['/prompts', p.id]">View Details</a>
+  </div>
+
+</div>
+
+<br>
+
+<a routerLink="/add">➕ Add New Prompt</a>
